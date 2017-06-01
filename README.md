@@ -1,38 +1,5 @@
 # Coding Interview University
 
-> I originally created this as a short to-do list of study topics for becoming a software engineer,
-> but it grew to the large list you see today. After going through this study plan, [I got hired
-> as a Software Development Engineer at Amazon](https://startupnextdoor.com/ive-been-acquired-by-amazon/?src=ciu)!
-> You probably won't have to study as much as I did. Anyway, everything you need is here.
->
-> The items listed here will prepare you well for in an interview at just about any software company,
-> including the giants: Amazon, Facebook, Google or Microsoft.
->
-> *Best of luck to you!*
-
-Translations:
-- [中文版本](translations/README-cn.md)
-- [Tiếng Việt - Vietnamese](translations/README-vi.md)
-- translations in progress:
-    - [Español](https://github.com/jwasham/coding-interview-university/issues/80)
-    - [हिन्दी](https://github.com/jwasham/coding-interview-university/issues/81)
-    - [עברית](https://github.com/jwasham/coding-interview-university/issues/82)
-    - [Bahasa Indonesia](https://github.com/jwasham/coding-interview-university/issues/101)
-    - [Arabic](https://github.com/jwasham/coding-interview-university/issues/98)
-    - [Turkish](https://github.com/jwasham/coding-interview-university/issues/90)
-    - [French](https://github.com/jwasham/coding-interview-university/issues/89)
-    - [Russian](https://github.com/jwasham/coding-interview-university/issues/87)
-    - [Ukrainian](https://github.com/jwasham/coding-interview-university/issues/106)
-    - [Brazilian Portuguese](https://github.com/jwasham/coding-interview-university/issues/113)
-    - [Korean](https://github.com/jwasham/coding-interview-university/issues/118)
-    - [Telugu](https://github.com/jwasham/coding-interview-university/issues/117)
-    - [Polish](https://github.com/jwasham/coding-interview-university/issues/122)
-    - [German](https://github.com/jwasham/coding-interview-university/issues/135)
-    - [Urdu](https://github.com/jwasham/coding-interview-university/issues/140)
-    - [Thai](https://github.com/jwasham/coding-interview-university/issues/156)
-    - [Greek](https://github.com/jwasham/coding-interview-university/issues/166)
-    - [Italian](https://github.com/jwasham/coding-interview-university/issues/170)
-
 ## What is it?
 
 This is my multi-month study plan for going from web developer (self-taught, no CS degree) to software engineer for a large company.
@@ -225,7 +192,7 @@ Sometimes the classes are not in session so you have to wait a couple of months,
 
 ## Interview Process & General Interview Prep
 
-- [ ] [ABC: Always Be Coding](https://medium.com/always-be-coding/abc-always-be-coding-d5f8051afce2#.4heg8zvm4)
+- [x] [ABC: Always Be Coding](https://medium.com/always-be-coding/abc-always-be-coding-d5f8051afce2#.4heg8zvm4)
 - [ ] [Whiteboarding](https://medium.com/@dpup/whiteboarding-4df873dbba2e#.hf6jn45g1)
 - [ ] [Effective Whiteboarding during Programming Interviews](http://www.coderust.com/blog/2014/04/10/effective-whiteboarding-during-programming-interviews/)
 - [ ] [Demystifying Tech Recruiting](https://www.youtube.com/watch?v=N233T0epWTs)
@@ -485,15 +452,15 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
             you'll quickly get proficient. Understanding C helps you understand how programs and memory work.
         - [answers to questions](https://github.com/lekkas/c-algorithms)
 
-- [ ] **How computers process a program:**
-    - [ ] [How does CPU execute program (video)](https://www.youtube.com/watch?v=42KTvGYQYnA)
-    - [ ] [Machine Code Instructions (video)](https://www.youtube.com/watch?v=Mv2XQgpbTNE)
+- [x] **How computers process a program:**
+    - [x] [How does CPU execute program (video)](https://www.youtube.com/watch?v=42KTvGYQYnA)
+    - [x] [Machine Code Instructions (video)](https://www.youtube.com/watch?v=Mv2XQgpbTNE)
 
 ## Algorithmic complexity / Big-O / Asymptotic analysis
 - nothing to implement
-- [ ] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
-- [ ] [Big O Notations (general quick tutorial) (video)](https://www.youtube.com/watch?v=V6mKVRU1evU)
-- [ ] [Big O Notation (and Omega and Theta) - best mathematical explanation (video)](https://www.youtube.com/watch?v=ei-A_wy5Yxw&index=2&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
+- [x] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
+- [x] [Big O Notations (general quick tutorial) (video)](https://www.youtube.com/watch?v=V6mKVRU1evU)
+- [x] [Big O Notation (and Omega and Theta) - best mathematical explanation (video)](https://www.youtube.com/watch?v=ei-A_wy5Yxw&index=2&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
 - [ ] Skiena:
     - [video](https://www.youtube.com/watch?v=gSyDMtdPNpU&index=2&list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b)
     - [slides](http://www3.cs.stonybrook.edu/~algorith/video-lectures/2007/lecture2.pdf)
@@ -502,12 +469,12 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 - [ ] [Asymptotics (video)](https://class.coursera.org/algorithmicthink1-004/lecture/61)
 - [ ] [UC Berkeley Big O (video)](https://youtu.be/VIS4YDpuP98)
 - [ ] [UC Berkeley Big Omega (video)](https://youtu.be/ca3e7UVmeUc)
-- [ ] [Amortized Analysis (video)](https://www.youtube.com/watch?v=B3SpQZaAZP4&index=10&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
+- [x] [Amortized Analysis (video)](https://www.youtube.com/watch?v=B3SpQZaAZP4&index=10&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
 - [ ] [Illustrating "Big O" (video)](https://class.coursera.org/algorithmicthink1-004/lecture/63)
 - [ ] TopCoder (includes recurrence relations and master theorem):
     - [Computational Complexity: Section 1](https://www.topcoder.com/community/data-science/data-science-tutorials/computational-complexity-section-1/)
     - [Computational Complexity: Section 2](https://www.topcoder.com/community/data-science/data-science-tutorials/computational-complexity-section-2/)
-- [ ] [Cheat sheet](http://bigocheatsheet.com/)
+- [x] [Cheat sheet](http://bigocheatsheet.com/)
 
 
     If some of the lectures are too mathy, you can jump down to the bottom and
