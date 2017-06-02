@@ -4,7 +4,7 @@
 
 // TODO implement size() and change the use of Array.length to MyVector.size() everywhere below
 // TODO all commented out methods
-// TODO getter for N
+// DONE getter for N
 
 public class MyVector {
 	
@@ -16,9 +16,14 @@ public class MyVector {
 		N = initSize;
 		arr = new String[N];
 		for(int x=0; x < N; x++){
-			arr[x] = "[]"; 					// Initial fill to avoid nulls - this surely needs to be done differently 
+			arr[x] = "[] "; 					// Initial fill to avoid nulls - this surely needs to be done differently 
 		}
 	}
+	
+	public int getN(){
+		return N;
+	}
+	
 	/*
 //	public int size(){ 						// ayy what?
 //		int size = 0;
@@ -38,15 +43,25 @@ public class MyVector {
 //	}
 	*/
 	public void push(String item){
-		if( N == arr.length ){ // check if full and then:
-			resize(2*N);
+		if( N == arr.length ){  // check if full and then:
+			resize(2*N);		// to myself: WHY N DOES NOT ALWAYS REFLECT SIZE: WE JUST _USE_ N TO RESIZE THE ARR, THEN LENGTH CHANGES BUT N STAYS AT PREV. VAL.
 		}
 		arr[N++] = item;
 	}
 	
-	public void pop(){ // remove from end, return value
+	public String pop(){ // remove from end, return value
 		
+		if( N == arr.length/4 ){
+			resize(arr.length/2);
+		}
+			String temp = arr[N-1];
+			arr[--N] = null;
+			
+			//N--; // OR without this line but with: arr[--N] = null; This is easier to read though
+			
+		return temp;
 	}
+	
 /*		
 //	public void insert(int index, String item){
 //		// inserts item at index, shifts that index's value and trailing elements to the right
@@ -64,12 +79,24 @@ public class MyVector {
 //		// looks for value and returns first index with that value, -1 if not found
 //	}
  * */
+	
 	private void resize(int newCap){
 		// private function; when you reach capacity, resize to double the size; when popping an item, if size is 1/4 of capacity, resize to half
 		String[] temp = new String[newCap];
-		for(int i = 0; i < arr.length; i++){
-			temp[i] = arr[i];
+		
+		if(newCap < N) // then pushing
+		{
+			for(int i = 0; i < arr.length; i++){
+				temp[i] = arr[i];
+			}
 		}
+		else if (newCap > N) // then popping
+		{
+			for(int i = 0; i < newCap/2; i++){
+				temp[i] = arr[i];
+			}
+		}
+		
 		arr = temp;
 	}
 
