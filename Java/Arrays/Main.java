@@ -90,6 +90,8 @@ public class Main {
 		System.out.println(Arr.capacity());
 		System.out.println(Arr.isEmpty());
 		
+		Arr.push("monkeys typerwriting");
+		
 		System.out.println(Arr.at(1));
 		
 	}
