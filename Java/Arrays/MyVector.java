@@ -16,32 +16,28 @@ public class MyVector {
 		N = initSize;
 		arr = new String[N];
 		for(int x=0; x < N; x++){
-			arr[x] = "[] "; 					// Initial fill to avoid nulls - this surely needs to be done differently 
+			arr[x] = "[] ";
 		}
 	}
 	
-	public int getN(){
+	public int size(){
 		return N;
 	}
 	
-	/*
-//	public int size(){ 						// ayy what?
-//		int size = 0;
-////			while( arr[size] != null){		// THIS WILL REQUIRE CATCHING EXCEPTIONS
-////				size++;
-////			}
-//		return size+1;
-//	}
-//	public void capacity(){
-//		// number of items it can hold
-//	}
-//	public void is_empty(){
-//		
-//	}
-//	public void at(int index){
-//		// returns item at given index, blows up if index out of bounds
-//	}
-	*/
+	public int capacity(){
+//		System.out.println("Free cells yet: " + (arr.length - N));
+		return arr.length - N; // number of items it can hold (yet)
+	}
+	
+	public boolean isEmpty(){
+		return ( N == 0 );
+	}
+	
+	public String at(int index){ // returns item at given index, blows up if index out of bounds
+		if ( index >= 0 && index <= (arr.length-1) ) return arr[index];
+		else return null;
+	}
+	
 	public void push(String item){
 		if( N == arr.length ){  // check if full and then:
 			resize(2*N);		// to myself: WHY N DOES NOT ALWAYS REFLECT SIZE: WE JUST _USE_ N TO RESIZE THE ARR, THEN LENGTH CHANGES BUT N STAYS AT PREV. VAL.
@@ -62,7 +58,7 @@ public class MyVector {
 		return temp;
 	}
 	
-/*		
+	
 //	public void insert(int index, String item){
 //		// inserts item at index, shifts that index's value and trailing elements to the right
 //	}
@@ -78,7 +74,7 @@ public class MyVector {
 //	public void find(String item) {
 //		// looks for value and returns first index with that value, -1 if not found
 //	}
- * */
+
 	
 	private void resize(int newCap){
 		// private function; when you reach capacity, resize to double the size; when popping an item, if size is 1/4 of capacity, resize to half
