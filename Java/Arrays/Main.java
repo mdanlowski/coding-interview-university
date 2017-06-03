@@ -6,13 +6,13 @@ public class Main {
 		
 		MyVector Arr = new MyVector(1);
 		
-		System.out.println(Arr.getN() + " " + Arr.arr.length); // N should be private
+		System.out.println(Arr.size() + " " + Arr.arr.length); // N should be private
 		
 		for(String x : Arr.arr){
 			System.out.print(x);
 		}
 		System.out.println();
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
 		
 		Arr.push("to ");
 		Arr.push("be ");
@@ -21,7 +21,7 @@ public class Main {
 			System.out.print(x);
 		}
 		System.out.println();
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
 		
 		Arr.push("or ");
 		Arr.push("ayy ");
@@ -31,7 +31,7 @@ public class Main {
 			System.out.print(x);
 		}
 		System.out.println();
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
 		
 		String t1 = Arr.pop();
 		
@@ -40,7 +40,7 @@ public class Main {
 		}
 		System.out.println();
 		System.out.println(t1 + " /popped");
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
 		
 		String t2 = Arr.pop();
 		
@@ -49,7 +49,7 @@ public class Main {
 		}
 		System.out.println();
 		System.out.println(t2 + " /popped");
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
 		
 		String t3 = Arr.pop();
 		
@@ -58,7 +58,7 @@ public class Main {
 		}
 		System.out.println();
 		System.out.println(t3 + " /popped");
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
 		
 		String t4 = Arr.pop();
 		
@@ -67,7 +67,7 @@ public class Main {
 		}
 		System.out.println();
 		System.out.println(t4 + " /popped");
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
 		
 		String t5 = Arr.pop();
 		
@@ -76,6 +76,21 @@ public class Main {
 		}
 		System.out.println();
 		System.out.println(t5 + " /popped");
-		System.out.println(Arr.getN() + " " + Arr.arr.length);
+		System.out.println(Arr.size() + " " + Arr.arr.length);
+		
+		String t6 = Arr.pop();
+		
+		for(String x : Arr.arr){
+			System.out.print(x);
+		}
+		System.out.println();
+		System.out.println(t6 + " /popped");
+		System.out.println(Arr.size() + " " + Arr.arr.length);
+		
+		System.out.println(Arr.capacity());
+		System.out.println(Arr.isEmpty());
+		
+		System.out.println(Arr.at(1));
+		
 	}
 }
