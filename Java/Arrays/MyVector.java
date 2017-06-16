@@ -8,40 +8,36 @@
 
 public class MyVector {
 	
-	private
-		int N; // store current array length
-		String[] arr; 						// STRING ARRAY ENTITY WE WORK ON IN THIS CLASS
+	private int N; // store current array length
+		
+	/*private*/ String[] arr; 						// STRING ARRAY ENTITY WE WORK ON IN THIS CLASS
 		
 	MyVector(int initSize){ // CONSTR.
 		N = initSize;
 		arr = new String[N];
 		for(int x=0; x < N; x++){
-			arr[x] = "[] "; 					// Initial fill to avoid nulls - this surely needs to be done differently 
+			arr[x] = "[] ";
 		}
 	}
 	
-	public int getN(){
+	public int size(){
 		return N;
 	}
 	
-	/*
-//	public int size(){ 						// ayy what?
-//		int size = 0;
-////			while( arr[size] != null){		// THIS WILL REQUIRE CATCHING EXCEPTIONS
-////				size++;
-////			}
-//		return size+1;
-//	}
-//	public void capacity(){
-//		// number of items it can hold
-//	}
-//	public void is_empty(){
-//		
-//	}
-//	public void at(int index){
-//		// returns item at given index, blows up if index out of bounds
-//	}
-	*/
+	public int capacity(){
+//		System.out.println("Free cells yet: " + (arr.length - N));
+		return arr.length;// - N; // number of items it can hold (yet)
+	}
+	
+	public boolean isEmpty(){
+		return ( N == 0 );
+	}
+	
+	public String at(int index){ // returns item at given index, blows up if index out of bounds
+		if ( index >= 0 && index <= (arr.length-1) ) return arr[index];
+		else return null;
+	}
+	
 	public void push(String item){
 		if( N == arr.length ){  // check if full and then:
 			resize(2*N);		// to myself: WHY N DOES NOT ALWAYS REFLECT SIZE: WE JUST _USE_ N TO RESIZE THE ARR, THEN LENGTH CHANGES BUT N STAYS AT PREV. VAL.
@@ -62,13 +58,29 @@ public class MyVector {
 		return temp;
 	}
 	
-/*		
-//	public void insert(int index, String item){
-//		// inserts item at index, shifts that index's value and trailing elements to the right
-//	}
-//	public void prepend(String item) {
-//		//can use insert above at index 0
-//	}
+	
+	public void insert(int index, String item){
+		// inserts item at index, shifts that index's value and trailing elements to the right
+		if ( index >= N ){ // if user wants to insert on index greather than size, we just push
+			push(item);
+		}
+		else {
+			if ( N == arr.length ) {
+				resize(2*N);
+			}
+			
+			for (int i = 0; i <= N-index; i++){
+				arr[N-i] = arr[N-1-i];
+				if(i==N-1) break;
+			}
+			arr[index] = item;
+			N++;
+		}
+	}
+	public void prepend(String item) {
+		//can use insert above at index 0, therefore user does not have to specify index if he wishes to "unshift" the stack
+		insert(0, item);
+	}
 //	public void delete(int index){
 //		// delete item at index, shifting all trailing elements left
 //	}
@@ -78,7 +90,7 @@ public class MyVector {
 //	public void find(String item) {
 //		// looks for value and returns first index with that value, -1 if not found
 //	}
- * */
+
 	
 	private void resize(int newCap){
 		// private function; when you reach capacity, resize to double the size; when popping an item, if size is 1/4 of capacity, resize to half
