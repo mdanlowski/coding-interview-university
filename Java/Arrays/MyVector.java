@@ -8,9 +8,9 @@
 
 public class MyVector {
 	
-	private
-		int N; // store current array length
-		String[] arr; 						// STRING ARRAY ENTITY WE WORK ON IN THIS CLASS
+	private int N; // store current array length
+		
+	/*private*/ String[] arr; 						// STRING ARRAY ENTITY WE WORK ON IN THIS CLASS
 		
 	MyVector(int initSize){ // CONSTR.
 		N = initSize;
@@ -26,7 +26,7 @@ public class MyVector {
 	
 	public int capacity(){
 //		System.out.println("Free cells yet: " + (arr.length - N));
-		return arr.length - N; // number of items it can hold (yet)
+		return arr.length;// - N; // number of items it can hold (yet)
 	}
 	
 	public boolean isEmpty(){
@@ -59,12 +59,28 @@ public class MyVector {
 	}
 	
 	
-//	public void insert(int index, String item){
-//		// inserts item at index, shifts that index's value and trailing elements to the right
-//	}
-//	public void prepend(String item) {
-//		//can use insert above at index 0
-//	}
+	public void insert(int index, String item){
+		// inserts item at index, shifts that index's value and trailing elements to the right
+		if ( index >= N ){ // if user wants to insert on index greather than size, we just push
+			push(item);
+		}
+		else {
+			if ( N == arr.length ) {
+				resize(2*N);
+			}
+			
+			for (int i = 0; i <= N-index; i++){
+				arr[N-i] = arr[N-1-i];
+				if(i==N-1) break;
+			}
+			arr[index] = item;
+			N++;
+		}
+	}
+	public void prepend(String item) {
+		//can use insert above at index 0, therefore user does not have to specify index if he wishes to "unshift" the stack
+		insert(0, item);
+	}
 //	public void delete(int index){
 //		// delete item at index, shifting all trailing elements left
 //	}
