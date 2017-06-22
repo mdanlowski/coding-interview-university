@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		MyVector Arr = new MyVector(1);
-		System.out.println(Arr.size()+"\t"+Arr.capacity());
+//		System.out.println(Arr.size()+"\t"+Arr.capacity());
 
 //		Arr.push("x ");
 		
@@ -13,9 +13,10 @@ public class Main {
 			System.out.print(x);
 		}
 		System.out.println("\n"+Arr.size()+"\t"+Arr.capacity());
-
-		Arr.insert(8, "lamaeo");
-//		Arr.insert(0, "lamaeo");
+		
+		Arr.insert(8, "two ");
+		Arr.insert(50, "three ");
+				
 //		Arr.prepend("LMAO ");
 //		Arr.prepend("LMAO ");
 //		Arr.prepend("LMAO ");
@@ -28,6 +29,12 @@ public class Main {
 		}
 		System.out.println("\n"+Arr.size()+"\t"+Arr.capacity());
 		
+		Arr.delete(0+3);
+		
+		for(String x : Arr.arr){
+			System.out.print(x);
+		}
+		System.out.println("\n"+Arr.size()+"\t"+Arr.capacity());
 		/*System.out.println(Arr.size() + " " + Arr.arr.length); // N should be private
 		
 		for(String x : Arr.arr){

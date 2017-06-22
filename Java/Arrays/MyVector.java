@@ -16,7 +16,7 @@ public class MyVector {
 		N = initSize;
 		arr = new String[N];
 		for(int x=0; x < N; x++){
-			arr[x] = "[] ";
+			arr[x] = "one ";
 		}
 	}
 	
@@ -40,7 +40,7 @@ public class MyVector {
 	
 	public void push(String item){
 		if( N == arr.length ){  // check if full and then:
-			resize(2*N);		// to myself: WHY N DOES NOT ALWAYS REFLECT SIZE: WE JUST _USE_ N TO RESIZE THE ARR, THEN LENGTH CHANGES BUT N STAYS AT PREV. VAL.
+			resize(2*N);		// uwotm8 to myself: WHY N DOES NOT ALWAYS REFLECT SIZE: WE JUST _USE_ N TO RESIZE THE ARR, THEN LENGTH CHANGES BUT N STAYS AT PREV. VAL.
 		}
 		arr[N++] = item;
 	}
@@ -61,7 +61,7 @@ public class MyVector {
 	
 	public void insert(int index, String item){
 		// inserts item at index, shifts that index's value and trailing elements to the right
-		if ( index >= N ){ // if user wants to insert on index greather than size, we just push
+		if ( index >= N ){
 			push(item);
 		}
 		else {
@@ -81,9 +81,18 @@ public class MyVector {
 		//can use insert above at index 0, therefore user does not have to specify index if he wishes to "unshift" the stack
 		insert(0, item);
 	}
-//	public void delete(int index){
-//		// delete item at index, shifting all trailing elements left
-//	}
+	public void delete(int index){
+		// delete item at index, shifting all trailing elements left
+		if( index <= N-1 ){
+			for (int i = 0; i < N-1-index; i++){
+				arr[index+i] = arr[index+i+1];
+			}
+			arr[N-1] = null;
+			}
+		else {
+			System.out.println("Index exceeding size, nothing done");
+		}
+	}
 //	public void remove(String item){
 //		//looks for value and removes index holding it (even if in multiple places)
 //	}
