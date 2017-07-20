@@ -2,7 +2,6 @@
 // https://github.com/mdanlowski/coding-interview-university/blob/master/README.md#arrays
 // data type: String
 
-// TODO implement size() and change the use of Array.length to MyVector.size() everywhere below
 // TODO all commented out methods
 // DONE getter for N
 
@@ -58,7 +57,6 @@ public class MyVector {
 		return temp;
 	}
 	
-	
 	public void insert(int index, String item){
 		// inserts item at index, shifts that index's value and trailing elements to the right
 		if ( index >= N ){
@@ -77,10 +75,12 @@ public class MyVector {
 			N++;
 		}
 	}
+	
 	public void prepend(String item) {
 		//can use insert above at index 0, therefore user does not have to specify index if he wishes to "unshift" the stack
 		insert(0, item);
 	}
+	
 	public void delete(int index){
 		// delete item at index, shifting all trailing elements left
 		if( index <= N-1 ){
@@ -93,12 +93,24 @@ public class MyVector {
 			System.out.println("Index exceeding size, nothing done");
 		}
 	}
-//	public void remove(String item){
-//		//looks for value and removes index holding it (even if in multiple places)
-//	}
-//	public void find(String item) {
-//		// looks for value and returns first index with that value, -1 if not found
-//	}
+	
+	public void remove(String item){
+		//looks for value and removes index holding it (even if in multiple places)
+		
+	}
+	
+	public int find(String item) {
+		// looks for value and returns first index with that value, -1 if not found
+		int ret = 0;
+		for (int i = 0; i < N; i++){
+			if( arr[i].equals(item) ) {
+				ret = i;
+				break;
+			}
+		}
+		if( ret > 0 ) return ret;
+		else return -1;
+	}
 
 	
 	private void resize(int newCap){
